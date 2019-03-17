@@ -1,4 +1,17 @@
 {
+  "entrypoint": "index.html",
+  "shell": "src/elixer-app.js",
+  "extraDependencies": [
+    "manifest.json"
+  ],
+  "builds": [
+    {
+      "name": "github",
+      "preset": "es5-bundled",
+      "basePath": "/elixer"
+    }
+  ],
+  "moduleResolution": "node",
   "npm": true,
   "lint": {
     "rules": [
