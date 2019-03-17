@@ -1,0 +1,7 @@
+{
+  "name": "elixer",
+  "short_name": "elixer",
+  "description": "Scoring application for the Call to Adventure board game by Brotherwise Games",
+  "start_url": "/",
+  "display": "standalone"
+}
