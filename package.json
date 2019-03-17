@@ -2,6 +2,8 @@
   "name": "elixer",
   "description": "Scoring application for the Call to Adventure board game by Brotherwise Games",
   "dependencies": {
+    "@polymer/app-layout": "github:PolymerElements/app-layout",
+    "@polymer/iron-pages": "github:PolymerElements/iron-pages",
     "@polymer/paper-input": "^3.0.1",
     "@polymer/paper-toast": "github:PolymerElements/paper-toast",
     "@polymer/polymer": "^3.0.0",

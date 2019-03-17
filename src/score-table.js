@@ -29,14 +29,14 @@ class ScoreTable extends LitElement {
           <th>Player ${item+1}</th>
         `)}
       </tr>
-      ${this.scoring.map((item, index) => html`
+      ${this.scoring.map((category, index) => html`
         <tr>
           <th>
-            ${item.name}
+            ${category.name}
           </th>
           ${array.map((item)=>html`
             <td>
-              <paper-input data-player=${item} type="number" @input=${this.updateScore}></paper-input>
+              <paper-input data-player=${item} data-category=${category.name} type="number" @input=${this.updateScore} @focus=${this.onFocusChange}></paper-input>
             </td>
           `)}
         </tr>
@@ -90,6 +90,10 @@ class ScoreTable extends LitElement {
     // lit-element does not do binding beyond top-level properties,
     // so we manually request an update, which forces the totals to refresh.
     this.requestUpdate();
+  }
+
+  onFocusChange(e) {
+    this.dispatchEvent(new CustomEvent('category-change', {detail: {category: e.target.dataset.category}}));
   }
 
   makePlayerNumberArray() {
