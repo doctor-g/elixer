@@ -1,5 +1,7 @@
 import { LitElement, html } from 'lit-element';
+import '@polymer/iron-icon/iron-icon.js';
 import '@polymer/paper-input/paper-input.js';
+import '@polymer/paper-icon-button/paper-icon-button.js';
 
 /**
  * @customElement
@@ -33,8 +35,8 @@ class ScoreTable extends LitElement {
       </tr>
       ${this.scoring.map((category, index) => html`
         <tr>
-          <th data-category=${category.name} @click=${this.__onCategorySelected}>
-            ${category.name}
+          <th>
+            <paper-icon-button data-category=${category.name} src=${category.image} @click=${this.__onCategorySelected}></paper-icon-button>
           </th>
           ${array.map((item)=>html`
             <td>

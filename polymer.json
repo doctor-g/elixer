@@ -2,7 +2,8 @@
   "entrypoint": "index.html",
   "shell": "src/elixer-app.js",
   "extraDependencies": [
-    "manifest.json"
+    "manifest.json",
+    "images/**"
   ],
   "builds": [
     {
