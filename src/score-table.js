@@ -14,6 +14,13 @@ class ScoreTable extends LitElement {
       :host {
         display: block;
       }
+      paper-input {
+        text-align: right;
+      }
+      .total {
+        text-align: right;
+        font-weight: bold;
+      }
     </style>
     <table>
       <tr>
@@ -37,7 +44,7 @@ class ScoreTable extends LitElement {
       <tr>
         <th>Total</th>
         ${array.map(item=>html`
-          <td>${this.totals[item]}</td>
+          <td class="total">${this.totals[item]}</td>
         `)}
       </tr>
     </table>
