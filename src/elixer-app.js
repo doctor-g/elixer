@@ -26,8 +26,8 @@ class ElixerApp extends PolymerElement {
         <app-toolbar>
           <iron-pages id="top" selected="None" attr-for-selected="category">
             <div category="None">CALL TO ADVENTURE Score Card</div>
-            <div category="Triumph">Count all Triumph from your Story, including Destiny.</div>
-            <div category="Tragedy">Count all Tragedy from your Story, including Destiny.</div>
+            <div category="Triumph">Count all Triumph from your Story, including Destiny and Corruption Track.</div>
+            <div category="Tragedy">Count all Tragedy from your Story, including Destiny and Corruption Track.</div>
             <div category="Experience">One point per unspent experience point</div>
             <div category="Hero Cards">One point per played Hero Card</div>
             <div category="Antihero Cards">One point per played Antihero Card</div>
@@ -36,15 +36,21 @@ class ElixerApp extends PolymerElement {
         </app-toolbar>
       </app-header>
       <div>
-        <score-table scoring=[[traditional]] on-category-change="_onCategoryChange"></score-table>
+        <score-table scoring=[[traditional]] on-category-selected="__onCategorySelected"></score-table>
       </div>
     </app-header-layout>
     <sw-update-toast></sw-update-toast>
   `;
   }
 
-  _onCategoryChange(e) {
-    this.$.top.selected = e.detail.category;
+  __onCategorySelected(e) {
+    var selected = e.detail.category;
+    if (this.$.top.selected === selected) {
+      this.$.top.selected = "None";
+    }
+    else {
+      this.$.top.selected = selected;
+    }
   }
 
   static get properties() {

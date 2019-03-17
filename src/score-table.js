@@ -8,7 +8,9 @@ import '@polymer/paper-input/paper-input.js';
 class ScoreTable extends LitElement {
 
   render() {
-    var array = this.makePlayerNumberArray();
+    // Make an array holding 0..(numplayers-1).
+    var array = [...Array(this.numPlayers).keys()].map(x => x);
+
     return html`
     <style>
       :host {
@@ -31,12 +33,12 @@ class ScoreTable extends LitElement {
       </tr>
       ${this.scoring.map((category, index) => html`
         <tr>
-          <th>
+          <th data-category=${category.name} @click=${this.__onCategorySelected}>
             ${category.name}
           </th>
           ${array.map((item)=>html`
             <td>
-              <paper-input data-player=${item} data-category=${category.name} type="number" @input=${this.updateScore} @focus=${this.onFocusChange}></paper-input>
+              <paper-input data-player=${item} type="number" @input=${this.__updateScore}></paper-input>
             </td>
           `)}
         </tr>
@@ -71,11 +73,11 @@ class ScoreTable extends LitElement {
     this.totals = Array(this.numPlayers).fill(0);
   }
 
-  total(player) {
+  __total(player) {
     return this.totals[player];
   }
 
-  updateScore(event) {
+  __updateScore(event) {
     const player = event.target.dataset.player;
     var inputElements = this.shadowRoot.querySelectorAll('paper-input');
     var sum = 0;
@@ -92,12 +94,8 @@ class ScoreTable extends LitElement {
     this.requestUpdate();
   }
 
-  onFocusChange(e) {
-    this.dispatchEvent(new CustomEvent('category-change', {detail: {category: e.target.dataset.category}}));
-  }
-
-  makePlayerNumberArray() {
-    return [...Array(this.numPlayers).keys()].map(x => x);
+  __onCategorySelected(e) {
+    this.dispatchEvent(new CustomEvent('category-selected', {detail: {category: e.target.dataset.category}}));
   }
 }
 
