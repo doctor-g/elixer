@@ -29,7 +29,7 @@ class ScoreTable extends LitElement {
           </th>
           ${array.map((item)=>html`
             <td>
-              <paper-input data-player=${item} type="number" @change=${this.updateScore}></paper-input>
+              <paper-input data-player=${item} type="number" @input=${this.updateScore}></paper-input>
             </td>
           `)}
         </tr>
