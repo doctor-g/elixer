@@ -1,5 +1,6 @@
 import { PolymerElement, html } from '@polymer/polymer';
 import './score-table.js';
+import './sw-update-toast.js';
 
 /**
  * @customElement
@@ -15,6 +16,7 @@ class ElixerApp extends PolymerElement {
       }
     </style>
     <score-table scoring=[[traditional]]></score-table>
+    <sw-update-toast></sw-update-toast>
   `;
   }
 

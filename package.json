@@ -3,6 +3,7 @@
   "description": "Scoring application for the Call to Adventure board game by Brotherwise Games",
   "dependencies": {
     "@polymer/paper-input": "^3.0.1",
+    "@polymer/paper-toast": "github:PolymerElements/paper-toast",
     "@polymer/polymer": "^3.0.0",
     "lit-element": "^2.0.1"
   },
