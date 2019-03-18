@@ -5,6 +5,7 @@ import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import '@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
 import '@polymer/iron-pages/iron-pages.js';
 import '@polymer/iron-icon/iron-icon.js';
+import '@polymer/paper-toast/paper-toast.js';
 import './score-table.js';
 import './sw-update-toast.js';
 
@@ -76,6 +77,9 @@ class ElixerApp extends PolymerElement {
       </div>
     </app-header-layout>
     <sw-update-toast></sw-update-toast>
+    <paper-toast id="a2hs" on-click="__addToHomeScreen" duration="10000">
+      Add to home screen
+    </paper-toast>
   `;
   }
 
@@ -122,8 +126,32 @@ class ElixerApp extends PolymerElement {
             }
           ];
         }
+      },
+      // Response from the beforeinstallprompt event
+      deferredPrompt: {
+        type: Object
       }
     };
+  }
+
+  ready() {
+    super.ready();
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      this.deferredPrompt = e;
+      // Prompt the user to add it to their home screen.
+      this.$.a2hs.open();
+    });
+  }
+
+  __addToHomeScreen() {
+    if (this.deferredPrompt) {
+      this.deferredPrompt.prompt();
+      this.deferredPrompt = null;
+    }
   }
 }
 
