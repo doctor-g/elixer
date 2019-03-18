@@ -36,7 +36,7 @@ class ScoreTable extends LitElement {
       ${this.scoring.map((category, index) => html`
         <tr>
           <th>
-            <paper-icon-button data-category=${category.name} src=${category.image} @click=${this.__onCategorySelected}></paper-icon-button>
+            <paper-icon-button data-category=${category.name} src=${category.image} alt="${category.name} Icon" @click=${this.__onCategorySelected}></paper-icon-button>
           </th>
           ${array.map((item)=>html`
             <td>

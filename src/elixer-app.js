@@ -44,28 +44,28 @@ class ElixerApp extends PolymerElement {
         <app-toolbar>
           <iron-pages id="top" selected="None" attr-for-selected="category">
             <div category="None" class="title">Call to Adventure Score Card</div>
-            <div category="Triumph">Count Triumph (<img src="images/triumph.png" class="reminder">) from Corruption Track and Story, including Destiny</div>
-            <div category="Tragedy">Count Tragedy (<img src="images/tragedy.png" class="reminder">) from Corruption Track and Story, including Destiny</div>
-            <div category="Experience">Count unspent Experience (<img src="images/experience.png" class="reminder">) tokens</div>
-            <div category="Hero Cards">Count played Hero (<img src="images/hero.png" class="reminder">) cards</div>
-            <div category="Antihero Cards">Count played Antihero (<img src="images/antihero.png" class="reminder">) cards</div>
+            <div category="Triumph">Count Triumph (<img src="images/triumph.png" class="reminder" alt="Triumph Icon">) from Corruption Track and Story, including Destiny</div>
+            <div category="Tragedy">Count Tragedy (<img src="images/tragedy.png" class="reminder" alt="Tragedy Icon">) from Corruption Track and Story, including Destiny</div>
+            <div category="Experience">Count unspent Experience (<img src="images/experience.png" class="reminder" alt="Experience Icon">) tokens</div>
+            <div category="Hero Cards">Count played Hero (<img src="images/hero.png" class="reminder" alt="Hero Card Icon">) cards</div>
+            <div category="Antihero Cards">Count played Antihero (<img src="images/antihero.png" class="reminder" alt="Antihero Card Icon">) cards</div>
             <div category="Story Icons">
               <div class="spread">
-                    <img class="storyicon" src="images/nature.png">
-                    <img class="storyicon" src="images/nature.png">
+                    <img class="storyicon" src="images/nature.png" alt="Nature Story Icon">
+                    <img class="storyicon" src="images/nature.png" alt="Nature Story Icon">
                     &Rightarrow;2
               </div>
               <div class="spread">
-                    <img class="storyicon" src="images/nature.png">
-                    <img class="storyicon" src="images/nature.png">
-                    <img class="storyicon" src="images/nature.png">
+                    <img class="storyicon" src="images/nature.png" alt="Nature Story Icon">
+                    <img class="storyicon" src="images/nature.png" alt="Nature Story Icon">
+                    <img class="storyicon" src="images/nature.png" alt="Nature Story Icon">
                     &Rightarrow;4
               </div>
               <div class="spread">
-                    <img class="storyicon" src="images/nature.png">
-                    <img class="storyicon" src="images/nature.png">
-                    <img class="storyicon" src="images/nature.png">
-                    <img class="storyicon" src="images/nature.png">
+                    <img class="storyicon" src="images/nature.png" alt="Nature Story Icon">
+                    <img class="storyicon" src="images/nature.png" alt="Nature Story Icon">
+                    <img class="storyicon" src="images/nature.png" alt="Nature Story Icon">
+                    <img class="storyicon" src="images/nature.png" alt="Nature Story Icon">
                     &Rightarrow;8
               </div>
             </div>
@@ -102,7 +102,7 @@ class ElixerApp extends PolymerElement {
           return [
             {
               name: 'Triumph',
-              image: 'images/triumph.png'
+              image: 'images/triumph.png',
             },
             {
               name: 'Tragedy',
