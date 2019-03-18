@@ -36,11 +36,11 @@ class ElixerApp extends PolymerElement {
         <app-toolbar>
           <iron-pages id="top" selected="None" attr-for-selected="category">
             <div category="None">CALL TO ADVENTURE Score Card</div>
-            <div category="Triumph">Count all Triumph from your Story, including Destiny and Corruption Track.</div>
-            <div category="Tragedy">Count all Tragedy from your Story, including Destiny and Corruption Track.</div>
-            <div category="Experience">One point per unspent experience point</div>
-            <div category="Hero Cards">One point per played Hero Card</div>
-            <div category="Antihero Cards">One point per played Antihero Card</div>
+            <div category="Triumph">Count Triumph from Corruption Track and Story, including Destiny</div>
+            <div category="Tragedy">Count Tragedy from Corruption Track and Story, including Destiny</div>
+            <div category="Experience">Count unspent Experience tokens</div>
+            <div category="Hero Cards">Count played Hero cards</div>
+            <div category="Antihero Cards">Count played Antihero cards</div>
             <div category="Story Icons">
               <div class="spread">
                     <img class="storyicon" src="images/nature.png">
