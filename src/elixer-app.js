@@ -20,6 +20,13 @@ class ElixerApp extends PolymerElement {
       :host {
         display: block;
       }
+      .title {
+        font-size: 120%;
+      }
+      .reminder {
+        width: 14px;
+        vertical-align: middle;
+      }
       .storyicon {
         width: 14px;
         height: 14px;
@@ -35,30 +42,30 @@ class ElixerApp extends PolymerElement {
       <app-header slot="header" fixed effects="waterfall">
         <app-toolbar>
           <iron-pages id="top" selected="None" attr-for-selected="category">
-            <div category="None">CALL TO ADVENTURE Score Card</div>
-            <div category="Triumph">Count Triumph from Corruption Track and Story, including Destiny</div>
-            <div category="Tragedy">Count Tragedy from Corruption Track and Story, including Destiny</div>
-            <div category="Experience">Count unspent Experience tokens</div>
-            <div category="Hero Cards">Count played Hero cards</div>
-            <div category="Antihero Cards">Count played Antihero cards</div>
+            <div category="None" class="title">Call to Adventure Score Card</div>
+            <div category="Triumph">Count Triumph (<img src="images/triumph.png" class="reminder">) from Corruption Track and Story, including Destiny</div>
+            <div category="Tragedy">Count Tragedy (<img src="images/tragedy.png" class="reminder">) from Corruption Track and Story, including Destiny</div>
+            <div category="Experience">Count unspent Experience (<img src="images/experience.png" class="reminder">) tokens</div>
+            <div category="Hero Cards">Count played Hero (<img src="images/hero.png" class="reminder">) cards</div>
+            <div category="Antihero Cards">Count played Antihero (<img src="images/antihero.png" class="reminder">) cards</div>
             <div category="Story Icons">
               <div class="spread">
                     <img class="storyicon" src="images/nature.png">
                     <img class="storyicon" src="images/nature.png">
-                    &rAarr;2
+                    &Rightarrow;2
               </div>
               <div class="spread">
                     <img class="storyicon" src="images/nature.png">
                     <img class="storyicon" src="images/nature.png">
                     <img class="storyicon" src="images/nature.png">
-                    &rAarr;4
+                    &Rightarrow;4
               </div>
               <div class="spread">
                     <img class="storyicon" src="images/nature.png">
                     <img class="storyicon" src="images/nature.png">
                     <img class="storyicon" src="images/nature.png">
                     <img class="storyicon" src="images/nature.png">
-                    &rAarr;8
+                    &Rightarrow;8
               </div>
             </div>
           </iron-pages>
@@ -74,7 +81,6 @@ class ElixerApp extends PolymerElement {
 
   __onCategorySelected(e) {
     var selected = e.detail.category;
-    console.log(selected);
     if (!selected || this.$.top.selected === selected) {
       this.$.top.selected = "None";
     }
