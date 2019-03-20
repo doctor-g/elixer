@@ -1,5 +1,4 @@
 import { LitElement, html } from 'lit-element';
-import '@polymer/iron-icon/iron-icon.js';
 import '@polymer/paper-input/paper-input.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
 
@@ -21,6 +20,15 @@ class ScoreTable extends LitElement {
       paper-input {
         text-align: right;
       }
+      .playerheading {
+        display: table-cell;
+        --paper-input-container-input: {
+          font-weight: bold;
+        }
+        --paper-input-container-label: {
+          font-weight: bold;
+        }
+      }
       .total {
         text-align: right;
         font-weight: bold;
@@ -30,7 +38,7 @@ class ScoreTable extends LitElement {
       <tr>
         <th></th>
         ${array.map((item)=>html`
-          <th>Player ${item+1}</th>
+          <paper-input class="playerheading" label="Player ${item+1}"></paper-input>
         `)}
       </tr>
       ${this.scoring.map((category, index) => html`

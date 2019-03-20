@@ -3,7 +3,6 @@
   "description": "Scoring application for the Call to Adventure board game by Brotherwise Games",
   "dependencies": {
     "@polymer/app-layout": "github:PolymerElements/app-layout",
-    "@polymer/iron-icon": "github:PolymerElements/iron-icon",
     "@polymer/iron-pages": "github:PolymerElements/iron-pages",
     "@polymer/paper-icon-button": "^3.0.2",
     "@polymer/paper-input": "^3.0.1",
