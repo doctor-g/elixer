@@ -50,7 +50,9 @@ class ScoreTable extends LitElement {
       ${this.rowConfig.map(row => 
         html`
           <tr>
-            <th>${row}</th>
+            <th>
+              <img src="images/${row.icon}">
+            </th>
             ${rowArray.map(i => html`
               <td>
                   <paper-input

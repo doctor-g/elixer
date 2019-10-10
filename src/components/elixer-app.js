@@ -49,14 +49,28 @@ class ElixerApp extends LitElement {
   constructor() {
     super();
     this.__conf = [
-      'Triumph',
-      'Tragedy',
-      'Hero Cards',
-      'Antihero Cards',
-      'Experience',
-      'Story Icons'
+      {
+        icon: 'triumph.png'
+      },
+      {
+        icon: 'tragedy.png'
+      },
+      {
+        icon: 'hero.png'
+      },
+      {
+        icon: 'antihero.png'
+      },
+      {
+        icon: 'experience.png'
+      },
+      {
+        icon: 'nature.png'
+      }
     ];
-    this.__nameOfTheWind = 'Name Runes';
+    this.__nameOfTheWind = {
+      icon: 'name.png'
+    };
   }
 
 }
