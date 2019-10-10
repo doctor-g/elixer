@@ -43,7 +43,6 @@ class ElixerApp extends LitElement {
     } else {
       this.__conf = this.__conf.splice(0, this.__conf.length-1);
     }
-    console.log(event.target.checked);
   }
 
   constructor() {
