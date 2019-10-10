@@ -22,6 +22,9 @@ class ScoreTable extends LitElement {
         th {
             vertical-align: bottom;
         }
+        img {
+          width: 40px;
+        }
       `
     ]
   }
@@ -38,7 +41,7 @@ class ScoreTable extends LitElement {
     return html`
       <table>
         <tr>
-            <th>Player</th>
+            <th></th>
             ${rowArray.map(i => html`
             <td>
                 <paper-input 
