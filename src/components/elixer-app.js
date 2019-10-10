@@ -1,9 +1,12 @@
 import { LitElement, html, css } from 'lit-element';
+import './score-table.js';
 
 class ElixerApp extends LitElement {
   static get properties() {
     return {
-      appTitle: { type: String },
+      conf: {
+        type: Array
+      }
     };
   }
 
@@ -19,12 +22,16 @@ class ElixerApp extends LitElement {
 
   render() {
     return html`
-      <h1>Hello</h1>      
+      <score-table .rowConfig="${this.conf}"></score-table>  
     `;
   }
 
   constructor() {
     super();
+    this.conf = [
+      'Super',
+      'Man'
+    ];
   }
 
 }
