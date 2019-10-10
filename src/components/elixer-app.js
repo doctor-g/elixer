@@ -29,8 +29,12 @@ class ElixerApp extends LitElement {
   constructor() {
     super();
     this.conf = [
-      'Super',
-      'Man'
+      'Triumph',
+      'Tragedy',
+      'Hero Cards',
+      'Antihero Cards',
+      'Experience',
+      'Story Icons'
     ];
   }
 
