@@ -1,8 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
 
-// These are the elements needed by this element.
-import { menuIcon } from './my-icons.js';
-
 class ElixerApp extends LitElement {
   static get properties() {
     return {
