@@ -1,16 +1,13 @@
 {
-  "name": "pwa-starter-kit",
-  "version": "0.9.0",
+  "name": "elixer",
+  "description": "Scoring application for the Call to Adventure board game by Brotherwise Games",
   "contributors": [
-    "The Polymer Authors"
+    "Paul Gestwicki"
   ],
-  "license": "BSD-3-Clause",
-  "repository": "Polymer/pwa-starter-kit",
   "scripts": {
     "start": "polymer serve",
-    "build": "polymer build --auto-base-path && gulp prpl-server",
+    "build": "polymer build --auto-base-path",
     "build:static": "polymer build",
-    "serve": "prpl-server --root server/build",
     "serve:static": "polymer serve --port 5000 build/es5-bundled"
   },
   "dependencies": {
@@ -22,9 +19,6 @@
   },
   "devDependencies": {
     "del": "^3.0.0",
-    "gulp": "^4.0.0",
-    "gulp-rename": "^1.3.0",
-    "gulp-replace": "^1.0.0",
     "polymer-cli": "^1.9.3"
   }
 }
