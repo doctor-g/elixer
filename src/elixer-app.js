@@ -29,6 +29,14 @@ class ElixerApp extends LitElement {
         .booktitle {
           font-style: italic;
         }
+        .storyicontable {
+          max-width: 400px;
+          width: 100%;
+        }
+        .reminder {
+          width: 20px;
+          vertical-align: bottom;
+        }
       `
     ]
   }
@@ -36,6 +44,31 @@ class ElixerApp extends LitElement {
   render() {
     return html`
       <score-table .rowConfig="${this.__conf}"></score-table> 
+
+      <table class="storyicontable">
+        <tr>
+          <td>
+            <img src="images/nature.png" class="reminder">
+            <img src="images/nature.png" class="reminder">
+            &rarr;2
+          </td>
+          <td>
+            <img src="images/nature.png" class="reminder">
+            <img src="images/nature.png" class="reminder">
+            <img src="images/nature.png" class="reminder">
+            &rarr;4
+          </td>
+          <td>
+            <img src="images/nature.png" class="reminder">
+            <img src="images/nature.png" class="reminder">
+            <img src="images/nature.png" class="reminder">
+            <img src="images/nature.png" class="reminder">
+            &rarr;8
+          </td>
+        </tr>
+      </table>
+
+
       <h2>Options</h2>
       <paper-checkbox @change=${this.__onNameOfTheWindCheck}>
         Use <span class="booktitle">Name of the Wind</span> Expansion

@@ -23,7 +23,7 @@ class ScoreTable extends LitElement {
             vertical-align: bottom;
         }
         img {
-          width: 40px;
+          width: 30px;
         }
       `
     ]
