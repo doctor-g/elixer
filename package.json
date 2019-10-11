@@ -11,6 +11,7 @@
     "serve:static": "polymer serve --port 5000 build/es5-bundled"
   },
   "dependencies": {
+    "@polymer/paper-button": "^3.0.1",
     "@polymer/paper-checkbox": "^3.1.0",
     "@polymer/paper-input": "^3.0.2",
     "@polymer/polymer": "^3.1.0",

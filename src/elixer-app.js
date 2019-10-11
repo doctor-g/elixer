@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import '@polymer/paper-checkbox/paper-checkbox.js';
+import '@polymer/paper-button/paper-button.js';
 import './score-table.js';
 import './update-notifier.js';
 
@@ -13,6 +14,12 @@ class ElixerApp extends LitElement {
         type: Object
       },
       __useNameOfTheWind: {
+        type: Boolean
+      },
+      __deferredPrompt: {
+        type: Object
+      },
+      __a2hsOpen: {
         type: Boolean
       }
     };
@@ -94,6 +101,11 @@ class ElixerApp extends LitElement {
         Use <span class="booktitle">Name of the Wind</span> Expansion
       </paper-checkbox>
       <update-notifier></update-notifier>
+      <snack-bar id="a2hs" ?active="${this.__a2hsOpen}">
+        Add to home screen?
+        <paper-button @click="${this.__addToHomeScreen}">Yes</paper-button>
+        <paper-button @click="${this.__dismissA2HS}">No</paper-button>
+      </snack-bar>
     `;
   }
 
@@ -139,6 +151,30 @@ class ElixerApp extends LitElement {
       icon: 'name.png',
       alt: 'Name icon'
     };
+    this.__a2hsOpen = false;
+  }
+
+  firstUpdated(changedProperties) {
+    super.firstUpdated(changedProperties);
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent Chrome 76 and later from showing the mini-infobar
+      e.preventDefault();
+
+      // Store the event so it can be triggered later.
+      this.__deferredPrompt = e;
+      this.__a2hsOpen = true;
+    });
+  }
+
+  __addToHomeScreen() {
+    if (this.__deferredPrompt) {
+      this.__deferredPrompt.prompt();
+      this.__deferredPrompt = null;
+    }
+  }
+
+  __dismissA2HS() {
+    this.__a2hsOpen = false;
   }
 
 }
