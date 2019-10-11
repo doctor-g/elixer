@@ -1,0 +1,21 @@
+{
+  "name": "Call to Adventure Score Card",
+  "short_name": "Elixer",
+  "description": "Scoring application for the Call to Adventure board game by Brotherwise Games",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/elixer/index.html",
+  "display": "standalone",
+  "background_color": "#f8f1e0",
+  "theme_color": "#f8f1e0"
+}
