@@ -29,6 +29,10 @@ class ElixerApp extends LitElement {
           --app-dark-text-color: var(--app-secondary-color);
           --app-light-text-color: white;
         }
+        .title {
+         text-align: center;
+         margin: 0;
+        }
         .booktitle {
           font-style: italic;
         }
@@ -61,6 +65,8 @@ class ElixerApp extends LitElement {
 
   render() {
     return html`
+      <h2 class="title">Call to Adventure Score Card</h2>
+
       <score-table .rowConfig="${this.__conf}"></score-table> 
 
       <table class="hint">
