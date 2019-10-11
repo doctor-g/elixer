@@ -51,6 +51,14 @@ class ElixerApp extends LitElement {
     ]
   }
 
+  __storyIcons(number) {
+    const templates = [];
+    for (; number > 0; number--) {
+      templates.push(html`<img src="images/nature.png" class="reminder" alt="Story Icon icon">`);
+    }
+    return templates;
+  }
+
   render() {
     return html`
       <score-table .rowConfig="${this.__conf}"></score-table> 
@@ -58,21 +66,15 @@ class ElixerApp extends LitElement {
       <table class="hint">
         <tr>
           <td>
-            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
-            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
+            ${this.__storyIcons(2)}
             &rarr;2
           </td>
           <td>
-            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
-            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
-            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
+            ${this.__storyIcons(3)}
             &rarr;4
           </td>
           <td>
-            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
-            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
-            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
-            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
+            ${this.__storyIcons(4)}
             &rarr;8
           </td>
           <td>
