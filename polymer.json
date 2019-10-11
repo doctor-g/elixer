@@ -13,8 +13,8 @@
       "name": "github",
       "preset": "es5-bundled",
       "basePath": "/elixer",
-      "js": {
-        "minify": false
+      "js" : {
+        "minify": true
       }
     }
   ],
