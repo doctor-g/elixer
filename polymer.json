@@ -15,7 +15,8 @@
       "basePath": "/elixer",
       "js" : {
         "minify": true
-      }
+      },
+      "addServiceWorker": true
     }
   ],
   "moduleResolution": "node",
