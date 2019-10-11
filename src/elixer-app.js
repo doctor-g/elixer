@@ -167,6 +167,7 @@ class ElixerApp extends LitElement {
   }
 
   __addToHomeScreen() {
+    this.__a2hsOpen = false;
     if (this.__deferredPrompt) {
       this.__deferredPrompt.prompt();
       this.__deferredPrompt = null;
