@@ -1,6 +1,6 @@
 {
   "entrypoint": "index.html",
-  "shell": "src/components/elixer-app.js",
+  "shell": "src/elixer-app.js",
   "sources": [
     "images/**/*"
   ],
