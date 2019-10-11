@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 import '@polymer/paper-checkbox/paper-checkbox.js';
 import './score-table.js';
+import './update-notifier.js';
 
 class ElixerApp extends LitElement {
   static get properties() {
@@ -19,6 +20,11 @@ class ElixerApp extends LitElement {
       css`
         :host {
           display: block;
+
+          --app-primary-color: #e91e63;
+          --app-secondary-color: #293237;
+          --app-dark-text-color: var(--app-secondary-color);
+          --app-light-text-color: white;
         }
         .booktitle {
           font-style: italic;
@@ -34,6 +40,7 @@ class ElixerApp extends LitElement {
       <paper-checkbox @change=${this.__onNameOfTheWindCheck}>
         Use <span class="booktitle">Name of the Wind</span> Expansion
       </paper-checkbox>
+      <update-notifier></update-notifier>
     `;
   }
 
