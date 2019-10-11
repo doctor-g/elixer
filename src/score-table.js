@@ -54,7 +54,7 @@ class ScoreTable extends LitElement {
         html`
           <tr>
             <th>
-              <img src="images/${row.icon}">
+              <img src="images/${row.icon}" alt="${row.alt}">
             </th>
             ${rowArray.map(i => html`
               <td>

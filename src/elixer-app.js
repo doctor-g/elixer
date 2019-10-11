@@ -49,26 +49,33 @@ class ElixerApp extends LitElement {
     super();
     this.__conf = [
       {
-        icon: 'triumph.png'
+        icon: 'triumph.png',
+        alt: 'Triumph icon'
       },
       {
-        icon: 'tragedy.png'
+        icon: 'tragedy.png',
+        alt: 'Tragedy icon'
       },
       {
-        icon: 'hero.png'
+        icon: 'hero.png',
+        alt: 'Hero Card icon'
       },
       {
-        icon: 'antihero.png'
+        icon: 'antihero.png',
+        alt: 'Antihero Card icon'
       },
       {
-        icon: 'experience.png'
+        icon: 'experience.png',
+        alt: 'Experience Point icon'
       },
       {
-        icon: 'nature.png'
+        icon: 'nature.png',
+        alt: 'Story Icon icon'
       }
     ];
     this.__nameOfTheWind = {
-      icon: 'name.png'
+      icon: 'name.png',
+      alt: 'Name icon'
     };
   }
 
