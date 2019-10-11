@@ -11,6 +11,9 @@ class ElixerApp extends LitElement {
       },
       __nameOfTheWind: {
         type: Object
+      },
+      __useNameOfTheWind: {
+        type: Boolean
       }
     };
   }
@@ -29,13 +32,20 @@ class ElixerApp extends LitElement {
         .booktitle {
           font-style: italic;
         }
-        .storyicontable {
+        .hint {
           max-width: 400px;
           width: 100%;
+          margin-top: 12px;
+        }
+        .hint td {
+          white-space: nowrap;
         }
         .reminder {
           width: 20px;
           vertical-align: bottom;
+        }
+        paper-checkbox {
+          margin-top: 12px;
         }
       `
     ]
@@ -45,31 +55,33 @@ class ElixerApp extends LitElement {
     return html`
       <score-table .rowConfig="${this.__conf}"></score-table> 
 
-      <table class="storyicontable">
+      <table class="hint">
         <tr>
           <td>
-            <img src="images/nature.png" class="reminder">
-            <img src="images/nature.png" class="reminder">
+            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
+            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
             &rarr;2
           </td>
           <td>
-            <img src="images/nature.png" class="reminder">
-            <img src="images/nature.png" class="reminder">
-            <img src="images/nature.png" class="reminder">
+            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
+            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
+            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
             &rarr;4
           </td>
           <td>
-            <img src="images/nature.png" class="reminder">
-            <img src="images/nature.png" class="reminder">
-            <img src="images/nature.png" class="reminder">
-            <img src="images/nature.png" class="reminder">
+            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
+            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
+            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
+            <img src="images/nature.png" class="reminder" alt="Story Icon icon">
             &rarr;8
           </td>
-        </tr>
+          <td>
+            <span .hidden="${!this.__useNameOfTheWind}">
+              <img src="images/name.png" class="reminder" alt="Name icon">&rarr;3
+            </span>
+          </td>
       </table>
 
-
-      <h2>Options</h2>
       <paper-checkbox @change=${this.__onNameOfTheWindCheck}>
         Use <span class="booktitle">Name of the Wind</span> Expansion
       </paper-checkbox>
@@ -80,8 +92,10 @@ class ElixerApp extends LitElement {
   __onNameOfTheWindCheck(event) {
     if (event.target.checked) {
       this.__conf = [...this.__conf, this.__nameOfTheWind];
+      this.__useNameOfTheWind = true;
     } else {
       this.__conf = this.__conf.splice(0, this.__conf.length-1);
+      this.__useNameOfTheWind = false;
     }
   }
 
